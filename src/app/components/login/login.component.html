@@ -1,0 +1,43 @@
+<div class="row text-center">
+  <div class="col-2 offset-5 ">
+    <div class="logo">
+      <img src="assets/images/logo-dipreca.svg">
+    </div>
+  </div>
+  <div class="col-12 logos-other">
+    <img src="assets/images/logos.svg">
+  </div>
+  <div class="col-8 offset-2 tittle-dipreca">
+    Dirección de Previsión de Carabineros de Chile
+  </div>
+
+  <form #loginForm="ngForm" class="form-signin" 
+  (ngSubmit)="loginForm.form.valid && onSubmit(loginForm.value)">
+
+    <input type="text" class="form-control animated bounceIn" 
+    placeholder="Usuario" #user="ngModel" [(ngModel)]="auth.user" name="user" 
+    [ngClass]="{ 'is-invalid': loginForm.submitted && user.invalid }" 
+    [matKeyboard]="'alphanumeric'" required>
+    <div *ngIf="loginForm.submitted && user.invalid" class="invalid-feedback">
+      <div *ngIf="user.errors.required">Por favor ingrese usuario.</div>
+    </div>
+
+    <input type="password" class="form-control animated bounceIn" 
+    placeholder="Contraseña" #password="ngModel" [(ngModel)]="auth.password" name="password" 
+    [ngClass]="{ 'is-invalid': loginForm.submitted && password.invalid }" [matKeyboard]="'alphanumeric'"
+    required>
+    <div *ngIf="loginForm.submitted && password.invalid" class="invalid-feedback">
+      <div *ngIf="password.errors.required">Por favor ingrese contraseña.</div>
+    </div>
+
+    <button class="btn-login" type="submit" id="submit">
+      Ingresar
+    </button>
+  </form>
+</div>
+
+<footer>
+  <div class="col-4 offset-4 text-center no-button">
+    <img src="assets/images/footer.svg">
+  </div>
+</footer>

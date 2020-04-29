@@ -1,0 +1,66 @@
+<!--<form name="fTP" id="fTP">
+        <input type="hidden" id="Status" name="Status" [value]="StatusFront">
+        <input type="hidden" id="Codigo" name="Codigo" [value]="CodigoFront">
+        <input type="hidden" id="Datos" name="Datos" [value]="DatosFront">
+    </form> -->
+<div class="container" style="margin-top: 21%; margin-left: 23% !important;">
+    <div *ngIf="flagPago" class="row">
+        <div class="col-4 col-sm-6">
+            <h1>Valor a pagar:</h1>
+        </div>
+        <div class="col-4 col-sm-6 ">
+            <h1>
+                <span class="badge badge-primary">${{pago.montoAPagar}}</span>
+            </h1>
+        </div>
+        <!-- Force next columns to break to new line --> 
+        <div class="w-100"></div>
+        <div class="col-6 col-sm-6">
+            <h1>Dinero ingresado:</h1>
+        </div>
+        <div class="col-6 col-sm-6 ">
+            <h1>
+                <span class="badge badge-primary">${{pago.dineroIngresado}}</span>
+            </h1>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-6 col-sm-6">
+            <h1>Dinero faltante:</h1>
+        </div>
+        <div *ngIf="pago.dineroFaltante !=1" class="col-6 col-sm-6">
+            <h1>
+                <span class="badge badge-primary">${{pago.dineroFaltante}}</span>
+            </h1>
+        </div>
+        <div *ngIf="pago.dineroFaltante == 1" class="col-6 col-sm-6">
+            <h1>
+                <span class="badge badge-primary">$0</span>
+            </h1>
+        </div>
+    </div>
+    <div *ngIf="flagVuelto" class="row" style="padding-top: 20%;">
+        <div class="col-6 col-sm-6">
+            <h1>Dinero entregado:</h1>
+        </div>
+        <div class="col-6 col-sm-6 ">
+            <h1>
+                <span class="badge badge-primary">${{vuelto.DineroRegresado}}</span>
+            </h1>
+        </div>
+        <!-- Force next columns to break to new line -->
+        <div class="w-100"></div>
+        <div class="col-6 col-sm-6">
+            <h1>Dinero por entregar:</h1>
+        </div>
+        <div class="col-6 col-sm-6 ">
+            <h1>
+                <span class="badge badge-primary">${{vuelto.DineroFaltante}}</span>
+            </h1>
+        </div>
+    </div>
+    <div *ngIf="flagPago" class="mx-auto" style="width: 150px; margin-top: 15%;margin-left: 15%!important">
+        <button class="btn btn-primary btn-lg" type="submit" id="btnCancelarOp" style="width: 250px;height: 100px;" (click)="cancelarOp()">
+            Cancelar
+        </button> 
+    </div>
+</div>

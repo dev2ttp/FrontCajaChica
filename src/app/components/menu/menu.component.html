@@ -1,0 +1,51 @@
+<div class="row text-center">
+  <div class="col-2 offset-5 ">
+    <div class="logo">
+      <img src="assets/images/logo-dipreca.svg">
+    </div>
+  </div>
+  <div class="col-12 logos-other">
+    <img src="assets/images/logos.svg">
+  </div>
+  <div class="col-8 offset-2 tittle-dipreca">
+    Dirección de Previsión de Carabineros de Chile
+  </div>
+  <div class="col-8 offset-2">
+    <button class="btn-menu animated bounceInUp faster"
+    (click)="onclickMenu($event, 'Boletas Pago de Pensión')" [disabled]="disabled">
+      <i class="fas fa-file-invoice-dollar"></i><br>
+      Boletas Pago de Pensión
+    </button>
+  </div>
+  <div class="col-8 offset-2">
+    <button class="btn-menu animated bounceInUp fast"
+    (click)="onclickMenu($event, 'Certificado de Rentas')" [disabled]="disabled">
+      <i class="fas fa-file-alt"></i><br>
+      Certificado de Rentas
+    </button>
+  </div>
+  <div class="col-8 offset-2">
+    <button class="btn-menu animated bounceInUp"
+    (click)="onclickMenu($event, 'Informe y Detalle de Préstamos')" [disabled]="disabled">
+      <i class="fas fa-file-powerpoint"></i><br>
+      Informe y Detalle de Préstamos
+    </button>
+  </div>
+  <div class="col-8 offset-2">
+    <button class="btn-menu animated bounceInUp slow"
+    (click)="onclickMenu($event, 'Certificados de Afiliación')" [disabled]="disabled">
+      <i class="fas fa-file-alt"></i><br>
+      Certificados de Afiliación
+    </button>
+  </div>
+</div>
+
+<footer>
+  <div class="col-4 offset-4 text-center">
+    <button class="btn-out animated bounceIn delay-1s mb-4" (click)=signOut($event)>
+      <i class="fas fa-share-square"></i><br>
+      Salir
+    </button> <br>
+    <img class="mt-5 foo" src="assets/images/footer.svg">
+  </div>
+</footer>
